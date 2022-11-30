@@ -12,7 +12,9 @@ body {
 } 
 
 */
-
+th{
+    border : 0.5px solid #cac9c9;
+}
 
 .bg-card {
     background-color: #171717;
