@@ -28,16 +28,17 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
     ],
 
     [
-      { id: "4", title: "Blog", isNested: false },
-      { id: "5", title: "Templates", isNested: false },
-      { id: "51", title: "Favourites", isNested: true },
-      { id: "52", title: "Custom Template", isNested: true },
-      { id: "6", title: "Integrations", isNested: false },
+      { id: "2", title: "Blog", isNested: false },
+      { id: "3", title: "Templates", isNested: false },
+      { id: "31", title: "Favourites", isNested: true },
+      { id: "32", title: "Custom Template", isNested: true },
+      { id: "4", title: "Integrations", isNested: false },
+      { id: "41", title: "Semrush", isNested: true },
     ],
 
     [
-      { id: "8", title: "Product Roadmap", isNested: false },
-      { id: "9", title: "What's New", isNested: false },
+      { id: "5", title: "Product Roadmap", isNested: false },
+      { id: "6", title: "What's New", isNested: false },
     ],
   ];
 
