@@ -4,6 +4,7 @@ import { useSpring, animated, config } from "react-spring";
 import Icon from "./icon";
 import IconButton, { NetworkIconButton } from "./iconButton";
 import MenuItem from "./menuItem";
+import UserAvatar from "./userAvatar";
 
 type ISidebarProps = {
   onSidebarHide: Function;
@@ -105,11 +106,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
 
         <div className="w-full hidden py-6 sm:flex bg-sky-100 dark:bg-neutral-800 flex-col">
           <div className="w-full flex items-center justify-start sm:justify-center xl:justify-start px-3 sm:px-0 xl:px-3">
-            <div className="inline-flex overflow-hidden relative justify-center items-center w-10 h-10 bg-indigo-600 rounded-full dark:bg-gray-600">
-              <span className="font-medium text-white dark:text-gray-300">
-                KS
-              </span>
-            </div>
+            <UserAvatar />
             <div className="block sm:hidden xl:block ml-3">
               <div className="text-sm font-bold dark:text-white">
                 keitikalpa.saha
