@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const MockUi: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <h1 className="text-6xl font-bold">
           Here's the{" "}
           <a className="text-blue-600" href="https://nextjs.org">
-            Solution!
+            Solution 2!
           </a>
         </h1>
 
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a
-            href="/mock_ui"
+            href="https://nextjs.org/docs"
             className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Assignment 1 &rarr;</h3>
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="/drag_n_drop"
+            href="https://nextjs.org/learn"
             className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Assignment 2 &rarr;</h3>
@@ -55,4 +55,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default MockUi;
