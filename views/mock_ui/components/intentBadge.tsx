@@ -37,3 +37,18 @@ export function IntentBadge({ intent }: { intent: number }) {
     </div>
   );
 }
+
+export function IntentLetterBadge({ intent }: { intent: number }) {
+  const { color: c, type } = intentMap[intent as keyof typeof intentMap];
+
+  return (
+    <div
+      className={clsx(
+        "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded w-content",
+        `bg-[${c.bg}] text-[${c.text}] hover:bg-[${c.hover}]`
+      )}
+    >
+      {type[0]}
+    </div>
+  );
+}
