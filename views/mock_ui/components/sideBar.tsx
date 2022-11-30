@@ -90,7 +90,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
           <MenuItem
             key={item.id}
             item={item}
-            onClick={setSelected}
+            onClick={() => setSelected(item.id)}
             selected={selected}
           />
         ))}
@@ -101,7 +101,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
           <MenuItem
             key={item.id}
             item={item}
-            onClick={setSelected}
+            onClick={() => setSelected(item.id)}
             selected={selected}
           />
         ))}

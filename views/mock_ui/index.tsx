@@ -5,15 +5,20 @@ import SideBar from "./components/sideBar";
 
 const App: NextPage = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="dark">
+    <div className={darkMode ? "dark" : ""}>
       <div className="flex dark:bg-neutral-50 dark:text-neutral-500 text-neutral-600">
         <SideBar
           showSidebar={showSidebar}
           onSidebarHide={() => onSetShowSidebar(false)}
         />
-        <Content onSidebarHide={() => onSetShowSidebar(true)} />
+        <Content
+          onSidebarHide={() => onSetShowSidebar(true)}
+          toggleDarkMode={() => setDarkMode(!darkMode)}
+          darkMode={darkMode}
+        />
       </div>
     </div>
   );

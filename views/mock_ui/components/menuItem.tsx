@@ -17,10 +17,11 @@ export default function MenuItem({
       className={clsx(
         "w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer",
         selected === id
-          ? "border-r-[2px] border-white text-white"
+          ? "border-r-[2px] dark:border-white dark:text-white border-indigo-600 text-indigo-600"
           : "sidebar-item",
         isNested ? "sm:hidden xl:flex" : ""
       )}
+      onClick={(e) => onClick()}
     >
       <SidebarIcons id={id} isNested={isNested} />
       <div className="block sm:hidden xl:block ml-2">{title}</div>
