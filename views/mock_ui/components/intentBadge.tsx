@@ -32,6 +32,11 @@ export function IntentBadge({ intent }: { intent: number }) {
         "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded w-content",
         `bg-[${c.bg}] text-[${c.text}] hover:bg-[${c.hover}]`
       )}
+      style={{
+        backgroundColor: c.bg,
+        color: c.text,
+        width: "fit-content",
+      }}
     >
       {type}
     </div>
@@ -39,16 +44,36 @@ export function IntentBadge({ intent }: { intent: number }) {
 }
 
 export function IntentLetterBadge({ intent }: { intent: number }) {
-  const { color: c, type } = intentMap[intent as keyof typeof intentMap];
+  const {
+    color: c,
+    hover_text,
+    type,
+  } = intentMap[intent as keyof typeof intentMap];
+  const className = `bg-[${c.bg}] text-[${c.text}] hover:bg-[${c.hover}]`;
 
   return (
-    <div
-      className={clsx(
-        "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded w-content",
-        `bg-[${c.bg}] text-[${c.text}] hover:bg-[${c.hover}]`
-      )}
-    >
-      {type[0]}
-    </div>
+    <>
+      <div
+        id="tooltip-default"
+        role="tooltip"
+        className="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+      >
+        {hover_text}
+        <div className="tooltip-arrow" data-popper-arrow></div>
+      </div>
+      <button
+        type="button"
+        className={clsx(
+          "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded w-content hover:bg-[#302e2a]"
+        )}
+        data-tooltip-target="tooltip-default"
+        style={{
+          backgroundColor: c.bg,
+          color: c.text,
+        }}
+      >
+        {type[0]}
+      </button>
+    </>
   );
 }
