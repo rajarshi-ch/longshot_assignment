@@ -23,19 +23,21 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
 
   const sidebarItems = [
     [
-      { id: "0", title: "Dashboard", notifications: false },
-      { id: "1", title: "Recipes", notifications: false },
+      { id: "0", title: "Dashboard", isNested: false },
+      { id: "1", title: "Recipes", isNested: false },
     ],
 
     [
-      { id: "4", title: "Blog", notifications: false },
-      { id: "5", title: "Templates", notifications: false },
-      { id: "6", title: "Integrations", notifications: false },
+      { id: "4", title: "Blog", isNested: false },
+      { id: "5", title: "Templates", isNested: false },
+      { id: "51", title: "Favourites", isNested: true },
+      { id: "52", title: "Custom Template", isNested: true },
+      { id: "6", title: "Integrations", isNested: false },
     ],
 
     [
-      { id: "8", title: "Product Roadmap", notifications: false },
-      { id: "9", title: "What's New", notifications: false },
+      { id: "8", title: "Product Roadmap", isNested: false },
+      { id: "9", title: "What's New", isNested: false },
     ],
   ];
 
@@ -104,7 +106,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
 
         <div className="flex-grow" />
 
-        <div className="w-full hidden py-6 sm:flex bg-sky-100 dark:bg-neutral-800 flex-col">
+        <div className="w-full hidden py-6 sm:flex bg-sky-100 dark:bg-neutral-800 flex-col rounded-t-xl">
           <div className="w-full flex items-center justify-start sm:justify-center xl:justify-start px-3 sm:px-0 xl:px-3">
             <UserAvatar />
             <div className="block sm:hidden xl:block ml-3">
@@ -131,7 +133,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
 
         <MenuItem
           key="collapse"
-          item={{ id: "7", title: "Collapse", notifications: false }}
+          item={{ id: "7", title: "Collapse", isNested: false }}
           onClick={setSelected}
           selected={selected}
         />
