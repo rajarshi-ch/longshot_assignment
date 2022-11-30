@@ -46,7 +46,7 @@ export default function Sidebar({ onSidebarHide, showSidebar }: ISidebarProps) {
   return (
     <div
       className={clsx(
-        "fixed inset-y-0 left-0 bg-white dark:bg-neutral-900 w-full sm:w-20 xl:w-60 sm:flex flex-col z-10 border-r-[1px] border-neutral-100",
+        "fixed inset-y-0 left-0 bg-white dark:bg-neutral-900 w-full sm:w-20 xl:w-60 sm:flex flex-col z-10 border-r-[1px] border-neutral-100  dark:border-neutral-700",
         showSidebar ? "flex" : "hidden"
       )}
     >

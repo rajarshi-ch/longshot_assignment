@@ -16,7 +16,9 @@ export default function MenuItem({
     <div
       className={clsx(
         "w-full mt-6 flex items-center px-3 sm:px-0 xl:px-3 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer",
-        selected === id ? "sidebar-item-selected" : "sidebar-item",
+        selected === id
+          ? "border-r-[2px] border-white text-white"
+          : "sidebar-item",
         isNested ? "sm:hidden xl:flex" : ""
       )}
     >
