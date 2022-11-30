@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           </a>
         </h1>
 
-        <p className="mt-3 text-2xl">Click any one to get started </p>
+        <p className="mt-3 text-2xl">Click any one to get started</p>
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a

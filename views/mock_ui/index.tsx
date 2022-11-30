@@ -1,8 +1,9 @@
+import type { NextPage } from "next";
 import { useState } from "react";
 import Content from "./components/content";
 import SideBar from "./components/sideBar";
 
-export default function App() {
+const App: NextPage = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
 
   return (
@@ -14,4 +15,6 @@ export default function App() {
       <Content onSidebarHide={() => onSetShowSidebar(true)} />
     </div>
   );
-}
+};
+
+export default App;
