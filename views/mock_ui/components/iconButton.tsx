@@ -4,7 +4,7 @@ type IIconButtonProps = {
   className: string;
 };
 
-export default function IconButton({
+export function NetworkIconButton({
   onClick = () => {},
   icon = "options",
   className = "w-4 h-4",
@@ -16,6 +16,18 @@ export default function IconButton({
         alt=""
         className="w-full h-full"
       />
+    </button>
+  );
+}
+
+export default function IconButton({
+  onClick = () => {},
+  icon = "options",
+  className = "w-4 h-4",
+}: IIconButtonProps) {
+  return (
+    <button onClick={(e) => onClick} type="button" className={className}>
+      <img src={`/${icon}.svg`} alt="" className="w-full h-full" />
     </button>
   );
 }

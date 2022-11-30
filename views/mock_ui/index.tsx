@@ -7,12 +7,14 @@ const App: NextPage = () => {
   const [showSidebar, onSetShowSidebar] = useState(false);
 
   return (
-    <div className="flex dark">
-      <SideBar
-        showSidebar={showSidebar}
-        onSidebarHide={() => onSetShowSidebar(false)}
-      />
-      <Content onSidebarHide={() => onSetShowSidebar(true)} />
+    <div className="">
+      <div className="flex dark:bg-neutral-50 dark:text-neutral-500 text-neutral-600">
+        <SideBar
+          showSidebar={showSidebar}
+          onSidebarHide={() => onSetShowSidebar(false)}
+        />
+        <Content onSidebarHide={() => onSetShowSidebar(true)} />
+      </div>
     </div>
   );
 };
