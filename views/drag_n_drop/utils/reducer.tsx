@@ -2,18 +2,18 @@ export type Outline = {
   title: string;
 };
 
-const reducer = ({ state, action }: any) => {
+export type Action = {
+  type: string;
+  source: number;
+  destination: number;
+};
+
+const reducer = (state: Array<Outline>, action: Action) => {
   switch (action.type) {
     case "addTask":
-      return [
-        ...state,
-        {
-          title: action.title,
-          status: action.status,
-        },
-      ];
+      return state; // TODO : Can be implemented as an improvement
     case "removeTask":
-      return state.filter((outline: Outline) => outline.title !== action.title);
+      return state; // TODO : Can be implemented as an improvement
     case "reorderList":
       return (() => {
         const items = Array.from(state);
