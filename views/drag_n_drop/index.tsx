@@ -20,8 +20,8 @@ export default function DNDApp() {
   function onDrop(ev: any) {
     let sourceIndex = parseInt(ev.dataTransfer.getData("text/plain"));
     let destinationIndex = parseInt(ev.target.getAttribute("data-index"));
-    console.log("Source ", sourceIndex);
-    console.log("Destination ", destinationIndex);
+    // console.log("Source ", sourceIndex);
+    // console.log("Destination ", destinationIndex);
     dispatch({
       type: "reorderList",
       source: sourceIndex,
@@ -30,7 +30,7 @@ export default function DNDApp() {
   }
 
   function onDragStart(ev: any, sourceIndex: number) {
-    console.log("dragstart:", sourceIndex.toString());
+    //console.log("dragstart:", sourceIndex.toString());
     ev.dataTransfer.setData("text/plain", sourceIndex);
   }
 
