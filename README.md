@@ -1,27 +1,51 @@
-# Next.js + Tailwind CSS Example
+<h1 align="center">The longshot Assignment</h1>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h3 align="center">
+  <a href="https://longshot-assignment.vercel.app/">Visit the live app</a> |
+  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/mock_ui">Task 1</a> |
+  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/drag_n_drop">Task 2</a>
+</h3>
 
-## Deploy your own
+![App screenshot](/public/screenshots/landing.png)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## What is this and who is it for 🤷‍♀️
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Features
 
-## How to use
+- Responsive
+- Ligt/Dark Mode
+- Written in modern React, only functional components with hooks
+- All custom Ui elements
+- Simple local React state management, without redux, mobx, or similar
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Setting up development environment 🛠
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+- Install [nodeJs](https://nodejs.org/en/) if you don't have it already.
+- Clone this repository
+- `npm run install-dependencies`
+- `npm run dev` to start a quick development server
+- App should now be running on `http://localhost:8080/`
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## What's missing?
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+There are features missing from this showcase product which should exist in a real product:
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Accessibility ♿
+
+Not all components have properly defined [aria attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA), visual focus indicators etc. Most early stage companies tend to ignore this aspect of their product but in many cases they shouldn't, especially once their userbase starts growing.
+
+### Unit/Integration tests 🧪
+
+Both Client and API are currently tested through [end-to-end Cypress tests](https://github.com/oldboyxx/jira_clone/tree/master/client/cypress/integration). That's good enough for a relatively simple application such as this, even if it was a real product. However, as the app grows in complexity, it might be wise to start writing additional unit/integration tests.
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+<hr>
+
+<h3 align="center">
+  <a href="https://longshot-assignment.vercel.app/">Visit the live app</a> |
+  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/mock_ui">Task 1</a> |
+  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/drag_n_drop">Task 2</a>
+</h3>
