@@ -7,13 +7,14 @@
 </h3>
 
 ![App screenshot](/public/screenshots/landing.png)
-
-## What is this and who is it for 🤷‍♀️
+![App screenshot](/public/screenshots/mock_ui_web_light.png)
+![App screenshot](/public/screenshots/mock_ui_web_dark.png)
 
 ## Features
 
 - Responsive
 - Light/Dark Mode
+- Dynamic & Data-driven UI. Changeing values will automatically change the UI !
 - Written in modern React, only functional components with hooks
 - All custom Ui elements
 - Simple local React state management, without redux, mobx, or similar
@@ -29,6 +30,10 @@
 ## What's missing?
 
 There are features missing from this showcase product which should exist in a real product:
+
+### Drawer Nav bar in mobile♿
+
+A lot of care has been taken to make the pages responsive, but the navbar menu currently dissapears in mobile device, which is the expected behaviour. And the next step would be to add a hamburger type buttonon the top right that opens up the nav menu
 
 ### Accessibility ♿
 
