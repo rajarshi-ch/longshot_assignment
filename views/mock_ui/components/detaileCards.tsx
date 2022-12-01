@@ -1,3 +1,4 @@
+import DonutChart from "./donutChart";
 import { IntentBadge } from "./intentBadge";
 
 export default function DetailCards() {
@@ -20,11 +21,9 @@ export default function DetailCards() {
             <div className="text-xl font-bold dark:text-white">46 %</div>
             <div className="text-sm dark:text-white">Possible</div>
           </div>
-          <img
-            src={`/usa.svg`}
-            alt=""
-            className="h-3 align-middle self-center ml-2"
-          />
+          <div className="align-middle self-center w-8 h-8 ml-2">
+            <DonutChart difficulty={46} />
+          </div>
         </div>
         Slightly more competition. You'll need well-structured and unique
         content appropriately optimized for your keywords.",

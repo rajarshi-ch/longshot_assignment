@@ -6,9 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/chart.js": "^2.9.37",
+    "chart.js": "^4.0.1",
     "clsx": "^1.2.1",
     "next": "latest",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.0.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-spring": "^9.5.5"
