@@ -13,7 +13,7 @@
 ## Features
 
 - Responsive
-- Ligt/Dark Mode
+- Light/Dark Mode
 - Written in modern React, only functional components with hooks
 - All custom Ui elements
 - Simple local React state management, without redux, mobx, or similar
