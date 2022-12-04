@@ -1,6 +1,9 @@
+import Waves from "../views/login/waves/waves";
+
 export default function Login() {
   return (
     <div className="2xl:container h-screen m-auto">
+      <Waves />
       <div hidden className="fixed inset-0 w-7/12 lg:block">
         <video
           className="w-full h-full object-cover"
