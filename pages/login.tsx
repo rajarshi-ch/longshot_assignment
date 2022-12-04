@@ -5,19 +5,17 @@ export default function Login() {
     <div className="2xl:container h-screen m-auto">
       <Waves />
       <div hidden className="fixed inset-0 w-7/12 lg:block">
-        <video
-          className="w-full h-full object-cover"
-          loop
-          autoPlay
-          muted
-          poster="./images/bg.jpg"
-          src="./videos/video.mp4"
-        ></video>
+        <img className="w-full h-full object-cover" src="./images/bg.jpg"></img>
       </div>
-      <div
+      {/* <div
         hidden
         role="hidden"
         className="fixed inset-0 w-6/12 ml-auto bg-white bg-opacity-70 backdrop-blur-xl lg:block"
+      ></div> */}
+      <div
+        hidden
+        role="hidden"
+        className="fixed inset-0 w-6/12 ml-auto bg-white backdrop-blur-xl lg:block"
       ></div>
       <div className="relative h-full ml-auto lg:w-6/12">
         <div className="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
@@ -88,9 +86,13 @@ export default function Login() {
             </div>
 
             <div>
-              <button className="w-full px-6 py-3 rounded-xl bg-sky-500 transition hover:bg-sky-600 focus:bg-sky-600 active:bg-sky-800">
-                <span className="font-semibold text-white text-lg">Login</span>
-              </button>
+              <a href="/crud">
+                <div className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 justify-center flex">
+                  <span className="font-semibold text-white text-lg">
+                    Login
+                  </span>
+                </div>
+              </a>
               <a href="#" type="reset" className="w-max p-3 -ml-3">
                 <span className="text-sm tracking-wide text-blue-600">
                   Create new account
