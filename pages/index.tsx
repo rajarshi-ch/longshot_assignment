@@ -11,8 +11,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">Hello there,</h1>
-        <MorphingText texts={["Welcome", "Aloha", "Hola"]} />
+        <h1 className="text-6xl font-semibold">Hello there,</h1>
+        <MorphingText
+          texts={["hola", "bonjour", "नमस्ते", "nǐn hǎo", "olá", "konnichiwa"]}
+        />
         <p className="mt-3 text-2xl">
           This website is a curation of multiple mini apps, to showcase my web
           dev skills :) . Click any one to get started

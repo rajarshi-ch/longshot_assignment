@@ -86,7 +86,10 @@ export default function MorphingText({ texts }: { texts: string[] }) {
 
   return (
     <div>
-      <div id="container" className={styles.container}>
+      <div
+        id="container"
+        className={styles.container + " text-blue-600 font-bold"}
+      >
         <span id="text1" className={styles.text}></span>
         <span id="text2" className={styles.text}></span>
       </div>

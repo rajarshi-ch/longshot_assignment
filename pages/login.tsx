@@ -7,8 +7,9 @@ export default function Login() {
           className="w-full h-full object-cover"
           loop
           autoPlay
-          src="../public/videos/video.mp4"
-          poster="../public/images/bg.jpg"
+          muted
+          poster="./images/bg.jpg"
+          src="./videos/video.mp4"
         ></video>
       </div>
       <div
@@ -19,13 +20,12 @@ export default function Login() {
       <div className="relative h-full ml-auto lg:w-6/12">
         <div className="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
           <div className="space-y-4">
-            <a href="">
-              <img
-                src="../public/images/logo.svg"
-                className="w-40"
-                alt="tailus logo"
-              />
-            </a>
+            <img
+              src="./images/logoLogin.svg"
+              className="w-40"
+              alt="tailus logo"
+            />
+
             <p className="font-medium text-lg text-gray-600">
               Welcome to tailus ! Login first
             </p>
@@ -34,7 +34,7 @@ export default function Login() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <button className="py-3 px-6 rounded-xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200">
               <div className="flex gap-4 justify-center">
-                <img src="../public/images/google.svg" className="w-5" alt="" />
+                <img src="./images/google.svg" className="w-5" alt="" />
                 <span className="block w-max font-medium tracking-wide text-sm text-blue-700">
                   with Google
                 </span>
@@ -100,7 +100,7 @@ export default function Login() {
           <div className="border-t pt-12">
             <div className="space-y-2 text-center">
               <img
-                src="../public/images/logo.svg"
+                src="./images/logoLogin.svg"
                 className="w-40 m-auto grayscale"
                 alt=""
               />
