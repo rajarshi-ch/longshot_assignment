@@ -2,7 +2,6 @@ export default function Login() {
   return (
     <div className="2xl:container h-screen m-auto">
       <div hidden className="fixed inset-0 w-7/12 lg:block">
-        {/* <span className="absolute left-6 bottom-6 text-sm">Video by MART PRODUCTION from <a href="https://www.pexels.com/" target="blank" title="Pexels">Pexels</a></span> */}
         <video
           className="w-full h-full object-cover"
           loop
@@ -21,13 +20,13 @@ export default function Login() {
         <div className="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
           <div className="space-y-4">
             <img
-              src="./images/logoLogin.svg"
+              src="./images/logoLogin2.svg"
               className="w-40"
               alt="tailus logo"
             />
 
             <p className="font-medium text-lg text-gray-600">
-              Welcome to tailus ! Login first
+              Welcome to citra ! Login first
             </p>
           </div>
 
@@ -100,12 +99,12 @@ export default function Login() {
           <div className="border-t pt-12">
             <div className="space-y-2 text-center">
               <img
-                src="./images/logoLogin.svg"
+                src="./images/logoLogin2.svg"
                 className="w-40 m-auto grayscale"
                 alt=""
               />
               <span className="block text-sm tracking-wide text-gray-500">
-                Get +50 modern blocks for free next month.
+                Your gateway to absolutely nothing.
               </span>
             </div>
           </div>
