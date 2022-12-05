@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FilterButton from "./components/filterButton";
+import GameCard from "./components/gameCard";
 
 import Header from "./components/header";
 import WelcomeBanner from "./components/welcomeBanner";
@@ -13,13 +14,18 @@ function Dashboard() {
         <Header />
 
         <main>
-          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-7xl mx-auto">
             {/* Welcome banner */}
             <WelcomeBanner />
 
             {/* Dashboard actions */}
-            <div className="sm:flex sm:justify-between sm:items-center mb-8">
-              <div></div>
+            <div className="flex justify-between items-center mb-8">
+              <div>
+                <span className="bg-indigo-100 text-indigo-800 text-md font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">
+                  25
+                </span>
+                Games
+              </div>
               {/* Right: Actions */}
               <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
                 {/* Filter button */}
@@ -48,6 +54,7 @@ function Dashboard() {
 
               <DashboardCard03 />
    */}
+              <GameCard />
             </div>
           </div>
         </main>
