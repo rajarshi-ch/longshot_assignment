@@ -5,7 +5,7 @@ import EditMenu from "./editMenu";
 
 function GameCard() {
   return (
-    <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200">
+    <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg hover:shadow-md rounded-sm border border-slate-200">
       <div className="px-5 py-5">
         <header className="flex justify-between items-start mb-2">
           {/* Icon */}
@@ -31,7 +31,7 @@ function GameCard() {
                 className="font-medium text-sm text-rose-500 hover:text-rose-600 flex py-1 px-3"
                 href="#0"
               >
-                Remove
+                Delete
               </a>
             </li>
           </EditMenu>

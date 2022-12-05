@@ -3,11 +3,19 @@ import FilterButton from "./components/filterButton";
 import GameCard from "./components/gameCard";
 
 import Header from "./components/header";
+import Modal from "./components/modal";
 import WelcomeBanner from "./components/welcomeBanner";
 
 function Dashboard() {
+  const [addNewModalOpen, setAddNewModalOpen] = useState(false);
+
   return (
     <div className="flex h-screen overflow-hidden">
+      {/* Modals */}
+      <Modal modalOpen={addNewModalOpen} setModalOpen={setAddNewModalOpen}>
+        {" "}
+        Hi{" "}
+      </Modal>
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}
@@ -34,6 +42,7 @@ function Dashboard() {
                 <button
                   type="button"
                   className="text-white bg-indigo-500 hover:bg-indigo-600 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#2557D6]/50 "
+                  onClick={() => setAddNewModalOpen(true)}
                 >
                   <svg
                     className="w-4 h-4 fill-current opacity-50 shrink-0 mr-2"
@@ -48,12 +57,10 @@ function Dashboard() {
 
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-              {/* <DashboardCard01 />
-
-              <DashboardCard02 />
-
-              <DashboardCard03 />
-   */}
+              <GameCard />
+              <GameCard />
+              <GameCard />
+              <GameCard />
               <GameCard />
             </div>
           </div>
