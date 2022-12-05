@@ -1,36 +1,71 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import MorphingText from "../components/morphingText/morphingText";
 
 const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>LongShot AI Assignment</title>
+        <title>Rajarshis Web Showcase</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Here's the <a className="text-blue-600 ">Solution!</a>
-        </h1>
-
-        <p className="mt-3 text-2xl">Click any one to get started</p>
+        <h1 className="text-6xl font-semibold">Hello there,</h1>
+        <MorphingText
+          texts={["hola", "bonjour", "नमस्ते", "nǐn hǎo", "olá", "konnichiwa"]}
+        />
+        <p className="mt-3 text-2xl">
+          This website is a curation of multiple mini apps, to showcase my web
+          dev skills :) . Click any one to get started
+        </p>
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a
             href="/mock_ui"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Assignment 1 &rarr;</h3>
-            <p className="mt-4 text-xl">Mock the UI of the given design.</p>
+            <h3 className="text-2xl font-bold">Dashboard Design &rarr;</h3>
+            <p className="mt-4 text-xl">
+              A responsive dashboard with light & dark mode.
+            </p>
           </a>
 
           <a
             href="/drag_n_drop"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Assignment 2 &rarr;</h3>
-            <p className="mt-4 text-xl">Implement a drag and drop feature.</p>
+            <h3 className="text-2xl font-bold">Drag & Drop &rarr;</h3>
+            <p className="mt-4 text-xl">
+              A re-arrangeable drag & drop list , implemented without any
+              libraries .
+            </p>
+          </a>
+
+          <a
+            href="/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">Login Page &rarr;</h3>
+            <p className="mt-4 text-xl">A simple login page.</p>
+          </a>
+
+          <a
+            href="/crud"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">CRUD operations &rarr;</h3>
+            <p className="mt-4 text-xl">
+              A simple dashboard with CRUD operations .
+            </p>
           </a>
         </div>
       </main>

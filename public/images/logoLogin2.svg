@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 943 262" style="enable-background:new 0 0 943 262;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:#0DCBFD;}
+	.st3{fill:#144150;}
+	.st4{font-family:'MyriadPro-Regular';}
+	.st5{font-size:252px;}
+</style>
+<radialGradient id="SVGID_1_" cx="-211.8751" cy="513.4125" r="1" gradientTransform="matrix(63.2201 -105.3624 -102.9263 -61.7583 66361.4219 9514.833)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#01FEE6"/>
+	<stop  offset="1" style="stop-color:#0EC8FE"/>
+</radialGradient>
+<path class="st0" d="M154.1,31l-1.1-0.6c-18.6-10.7-41.4-10.7-60,0L50.9,54.7c-18.6,10.7-30,30.5-30,52v48.6c0,21.4,11.4,41.2,30,52
+	L93,231.6c18.6,10.7,41.4,10.7,60,0l42.1-24.3c18.6-10.7,30-30.5,30-52v-48.6c0-15.8-6.2-30.7-16.9-41.7c5.2-4.5,9.1-10.5,10.8-17.4
+	c16.4,15,26.1,36.4,26.1,59.1v48.6c0,28.6-15.2,55-40,69.3L163,248.9c-24.8,14.3-55.2,14.3-80,0l-42.1-24.3
+	c-24.8-14.3-40-40.7-40-69.3v-48.6c0-28.6,15.2-55,40-69.3L83,13.1c24.8-14.3,55.2-14.3,80,0l1.7,1C159.6,18.4,155.8,24.3,154.1,31z
+	"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="181" y1="132.5" x2="64" y2="132.5" gradientTransform="matrix(1 0 0 -1 0 264)">
+	<stop  offset="0" style="stop-color:#01FEE6"/>
+	<stop  offset="1" style="stop-color:#0DCBFD"/>
+</linearGradient>
+<path class="st1" d="M64,131.5C64,99.2,90.2,73,122.5,73l0,0c32.3,0,58.5,26.2,58.5,58.5l0,0c0,32.3-26.2,58.5-58.5,58.5l0,0
+	C90.2,190,64,163.8,64,131.5L64,131.5z"/>
+<path class="st2" d="M186.5,16L186.5,16c12.4,0,22.5,10.1,22.5,22.5l0,0c0,12.4-10.1,22.5-22.5,22.5l0,0C174.1,61,164,50.9,164,38.5
+	l0,0C164,26.1,174.1,16,186.5,16z"/>
+<text transform="matrix(1 0 0 1 308.7628 195.5278)" class="st3 st4 st5">citra.</text>
+</svg>
