@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddNewModalContent from "./components/addNewModalContent";
 import FilterButton from "./components/filterButton";
 import GameCard from "./components/gameCard";
 
@@ -13,8 +14,7 @@ function Dashboard() {
     <div className="flex h-screen overflow-hidden">
       {/* Modals */}
       <Modal modalOpen={addNewModalOpen} setModalOpen={setAddNewModalOpen}>
-        {" "}
-        Hi{" "}
+        <AddNewModalContent onClose={() => setAddNewModalOpen(false)} />
       </Modal>
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
@@ -39,6 +39,7 @@ function Dashboard() {
                 {/* Filter button */}
                 <FilterButton />
 
+                {/* Add new button */}
                 <button
                   type="button"
                   className="text-white bg-indigo-500 hover:bg-indigo-600 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#2557D6]/50 "

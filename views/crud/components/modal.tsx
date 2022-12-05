@@ -54,7 +54,7 @@ function Modal({
       >
         <div
           ref={modalContent}
-          className="bg-white overflow-auto max-w-2xl w-full max-h-full rounded shadow-lg"
+          className="bg-white overflow-auto max-w-2xl w-full max-h-full rounded shadow-lg p-8"
         >
           {children}
         </div>
