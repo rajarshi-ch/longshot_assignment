@@ -1,9 +1,8 @@
-<h1 align="center">The longshot Assignment</h1>
+<h1 align="center">My Web Showcase</h1>
 
 <h3 align="center">
-  <a href="https://longshot-assignment.vercel.app/">Visit the live app</a> |
-  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/mock_ui">Task 1</a> |
-  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/drag_n_drop">Task 2</a>
+  <a href="https://web-showcase-three.vercel.app/">Visit the live app</a>
+
 </h3>
 
 ![App screenshot](/public/screenshots/landing.png)
@@ -50,7 +49,5 @@ Both Client and API are currently tested through [end-to-end Cypress tests](http
 <hr>
 
 <h3 align="center">
-  <a href="https://longshot-assignment.vercel.app/">Visit the live app</a> |
-  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/mock_ui">Task 1</a> |
-  <a href="https://github.com/rajarshi-ch/longshot_assignment/tree/main/views/drag_n_drop">Task 2</a>
+  <a href="https://web-showcase-three.vercel.app/">Visit the live app</a> |
 </h3>
