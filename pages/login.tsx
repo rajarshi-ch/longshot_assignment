@@ -5,8 +5,27 @@ export default function Login() {
     <div className="2xl:container h-screen m-auto">
       <Waves />
       <div hidden className="fixed inset-0 w-7/12 lg:block">
-        <img className="w-full h-full object-cover" src="./images/bg.jpg"></img>
+        {/* <img
+          className="w-full h-full object-cover "
+          src="./images/telegram.svg"
+        ></img> */}
+        <div className="w-full h-full object-cover bg-gradient-to-b from-cyan-300 to-blue-500 bg-opacity-50">
+          <div className="flex flex-col justify-center items-center h-full">
+            <div className="space-x-4 flex-row flex mr-20">
+              <div className="relative right-0 top-0 w-16 hover:-translate-y-2 ">
+                <img src="./images/bitcoin.svg"></img>
+              </div>
+              <div className="relative right-0 top-0 w-16 hover:-translate-y-2">
+                <img src="./images/discord.svg"></img>
+              </div>
+              <div className="relative right-0 top-0 w-16 hover:-translate-y-2">
+                <img src="./images/telegram.svg"></img>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* <div
         hidden
         role="hidden"
@@ -17,17 +36,15 @@ export default function Login() {
         role="hidden"
         className="fixed inset-0 w-6/12 ml-auto bg-white backdrop-blur-xl lg:block"
       ></div>
-      <div className="relative h-full ml-auto lg:w-6/12">
+      <div className="relative h-full ml-auto lg:w-6/12 z-10">
         <div className="m-auto py-12 px-6 sm:p-20 xl:w-10/12">
           <div className="space-y-4">
-            <img
-              src="./images/logoLogin2.svg"
-              className="w-40"
-              alt="tailus logo"
-            />
+            <div className="relative right-0 top-0 w-16">
+              <img src="./images/discord.svg"></img>
+            </div>
 
             <p className="font-medium text-lg text-gray-600">
-              Welcome to citra ! Login first
+              Welcome to BitCoin Raja !
             </p>
           </div>
 
@@ -87,7 +104,7 @@ export default function Login() {
 
             <div>
               <a href="/crud">
-                <div className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 justify-center flex">
+                <div className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 justify-center flex hover:border-b-4 border-black">
                   <span className="font-semibold text-white text-lg">
                     Login
                   </span>
@@ -104,12 +121,12 @@ export default function Login() {
           <div className="border-t pt-12">
             <div className="space-y-2 text-center">
               <img
-                src="./images/logoLogin2.svg"
-                className="w-40 m-auto grayscale"
+                src="./images/bitcoin.svg"
+                className="w-12 m-auto grayscale"
                 alt=""
               />
               <span className="block text-sm tracking-wide text-gray-500">
-                Your gateway to absolutely nothing.
+                @2022 BitCoin Raja
               </span>
             </div>
           </div>

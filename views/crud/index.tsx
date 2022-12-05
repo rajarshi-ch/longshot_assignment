@@ -104,7 +104,7 @@ function Dashboard() {
         {/*  Site header */}
         <Header />
 
-        <main>
+        <main className="bg-slate-50 h-full">
           <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-7xl mx-auto">
             {/* Welcome banner */}
             <WelcomeBanner />

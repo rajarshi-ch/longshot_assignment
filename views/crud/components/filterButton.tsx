@@ -10,8 +10,19 @@ function FilterButton() {
       ref={trigger}
       className="font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
     >
-      <svg className="w-4 h-4 fill-current" viewBox="0 0 16 16">
-        <path d="M9 15H7a1 1 0 010-2h2a1 1 0 010 2zM11 11H5a1 1 0 010-2h6a1 1 0 010 2zM13 7H3a1 1 0 010-2h10a1 1 0 010 2zM15 3H1a1 1 0 010-2h14a1 1 0 010 2z" />
+      <svg
+        className="w-4 h-4"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          className="fill-current text-slate-500"
+          d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"
+        />
+        <path
+          className="fill-current text-slate-400"
+          d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z"
+        />
       </svg>
     </button>
   );
