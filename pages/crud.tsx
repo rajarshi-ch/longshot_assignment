@@ -1,5 +1,8 @@
+import { NextPage } from "next";
 import Dashboard from "../views/crud";
 
-export default function Crud() {
+const Crud: NextPage = () => {
   return <Dashboard />;
-}
+};
+
+export default Crud;

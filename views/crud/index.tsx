@@ -9,6 +9,13 @@ import Modal from "./components/modal";
 import WelcomeBanner from "./components/welcomeBanner";
 import gamesReducer, { INITIAL_STATE } from "./utils/gamesReducer";
 import { IGameModel } from "./utils/types";
+import { db } from "./utils/database/db";
+import { useLiveQuery } from "dexie-react-hooks";
+import dynamic from "next/dynamic";
+
+const GamesList = dynamic(() => import("./components/gamesList"), {
+  ssr: false,
+});
 
 function Dashboard() {
   const [addNewModalOpen, setAddNewModalOpen] = useState(false);
@@ -38,37 +45,6 @@ function Dashboard() {
       setSelectedGame(null);
     }
   }, [addNewModalOpen, deleteWarningModalOpen]);
-
-  const games: Array<IGameModel> = [
-    {
-      id: 1,
-      name: "Some Game Name",
-      author: "John Doe",
-      url: "https://www.acmeplus.com",
-      published_date: "2021-01-01",
-    },
-    {
-      id: 2,
-      name: "Some Game Name",
-      author: "John Doe",
-      url: "https://www.acmeplus.com",
-      published_date: "2021-01-01",
-    },
-    {
-      id: 3,
-      name: "Some Game Name",
-      author: "John Doe",
-      url: "https://www.acmeplus.com",
-      published_date: "2021-01-01",
-    },
-    {
-      id: 4,
-      name: "Some Game Name",
-      author: "John Doe",
-      url: "https://www.acmeplus.com",
-      published_date: "2021-01-01",
-    },
-  ];
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -130,9 +106,7 @@ function Dashboard() {
 
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-              {games.map((game) => (
-                <GameCard game={game} onEdit={onEdit} onDelete={onDelete} />
-              ))}
+              <GamesList onEdit={onEdit} onDelete={onDelete} />
             </div>
           </div>
         </main>

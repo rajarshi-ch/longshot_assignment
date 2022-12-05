@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import styles from "./styles.module.css";
 
 export default function MorphingText({ texts }: { texts: string[] }) {
-  let elts = {};
+  let elts = {} as any;
 
   const morphTime = 1;
   const cooldownTime = 0.25;
