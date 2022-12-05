@@ -1,20 +1,30 @@
-import { useLiveQuery } from "dexie-react-hooks";
-import { db } from "../utils/database/db";
+import { IGameModel } from "../utils/types";
 import GameCard from "./gameCard";
 
 type GamesListProps = {
+  games: Array<IGameModel> | undefined;
   onEdit: Function;
   onDelete: Function;
+  onDetails: Function;
 };
 
-export default function GamesList({ onEdit, onDelete }: GamesListProps) {
-  const games = useLiveQuery(() => db.games.toArray());
-
+export default function GamesList({
+  onEdit,
+  onDelete,
+  games,
+  onDetails,
+}: GamesListProps) {
   if (!games) return <div>Loading...</div>;
   return (
     <>
       {games.map((game) => (
-        <GameCard game={game} onEdit={onEdit} onDelete={onDelete} />
+        <GameCard
+          key={game.id}
+          game={game}
+          onEdit={onEdit}
+          onDelete={onDelete}
+          onDetails={onDetails}
+        />
       ))}
     </>
   );

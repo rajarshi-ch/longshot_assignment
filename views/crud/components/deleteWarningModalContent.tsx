@@ -41,6 +41,7 @@ export default function DeleteWarningModalContent({
         <button
           type="submit"
           className="text-white bg-red-700 hover:bg-red-800 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center"
+          onClick={() => onDelete()}
         >
           Delete
         </button>

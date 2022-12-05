@@ -2,16 +2,15 @@ import React, { useState, useEffect, useReducer } from "react";
 import AddNewModalContent from "./components/addNewModalContent";
 import DeleteWarningModalContent from "./components/deleteWarningModalContent";
 import FilterButton from "./components/filterButton";
-import GameCard from "./components/gameCard";
+import { useLiveQuery } from "dexie-react-hooks";
+import { db } from "./utils/database/db";
 
 import Header from "./components/header";
 import Modal from "./components/modal";
 import WelcomeBanner from "./components/welcomeBanner";
-import gamesReducer, { INITIAL_STATE } from "./utils/gamesReducer";
 import { IGameModel } from "./utils/types";
-import { db } from "./utils/database/db";
-import { useLiveQuery } from "dexie-react-hooks";
 import dynamic from "next/dynamic";
+import GameDetailsModalContent from "./components/gameDetailsModalContent";
 
 const GamesList = dynamic(() => import("./components/gamesList"), {
   ssr: false,
@@ -20,9 +19,10 @@ const GamesList = dynamic(() => import("./components/gamesList"), {
 function Dashboard() {
   const [addNewModalOpen, setAddNewModalOpen] = useState(false);
   const [deleteWarningModalOpen, setDeleteWarningModalOpen] = useState(false);
+  const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState<IGameModel | null>(null);
 
-  //const [state, dispatch] = useReducer(gamesReducer, INITIAL_STATE);
+  const games = useLiveQuery(() => db.games.toArray());
 
   // called when the edit button is clicked on an individual card
   function onEdit(game: IGameModel) {
@@ -36,8 +36,29 @@ function Dashboard() {
     setSelectedGame(game);
   }
 
+  // function to open the details modal when details button is clicked
+  function onDetails(game: IGameModel) {
+    setSelectedGame(game);
+    setDetailsModalOpen(true);
+  }
+
   // function to initiate delete action
-  function deleteGame(game: IGameModel) {}
+  function deleteGame(game: IGameModel) {
+    db.games.delete(game.id);
+    setDeleteWarningModalOpen(false);
+  }
+
+  // add a new gaem to the database
+  function addNewGame(game: IGameModel) {
+    db.games.add(game);
+    setAddNewModalOpen(false);
+  }
+
+  //update an existing game in the database
+  function updateGame(game: IGameModel) {
+    db.games.update(game.id, game);
+    setAddNewModalOpen(false);
+  }
 
   // clears the selected game when the modals are closed
   useEffect(() => {
@@ -49,18 +70,32 @@ function Dashboard() {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Modals */}
+
+      {/* Delete Warning modal */}
       <Modal
         modalOpen={deleteWarningModalOpen}
         setModalOpen={setDeleteWarningModalOpen}
       >
         <DeleteWarningModalContent
           onClose={() => setDeleteWarningModalOpen(false)}
-          onDelete={deleteGame}
+          onDelete={() => deleteGame(selectedGame!)}
         />
       </Modal>
+
+      {/* Add/Edit Game Modal */}
       <Modal modalOpen={addNewModalOpen} setModalOpen={setAddNewModalOpen}>
         <AddNewModalContent
           onClose={() => setAddNewModalOpen(false)}
+          selectedGame={selectedGame}
+          onAdd={addNewGame}
+          onUpdate={updateGame}
+        />
+      </Modal>
+
+      {/* Details Modal */}
+      <Modal modalOpen={detailsModalOpen} setModalOpen={setDetailsModalOpen}>
+        <GameDetailsModalContent
+          onClose={() => setDetailsModalOpen(false)}
           selectedGame={selectedGame}
         />
       </Modal>
@@ -78,7 +113,7 @@ function Dashboard() {
             <div className="flex justify-between items-center mb-8">
               <div>
                 <span className="bg-indigo-100 text-indigo-800 text-md font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">
-                  25
+                  {games ? games.length : 0}
                 </span>
                 Games
               </div>
@@ -104,9 +139,23 @@ function Dashboard() {
               </div>
             </div>
 
+            {games && games.length === 0 && (
+              <div className="w-full flex justify-center opacity-70 ">
+                <img
+                  src="./images/noGames.svg"
+                  alt="No games"
+                  className="w-1/2"
+                />
+              </div>
+            )}
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-              <GamesList onEdit={onEdit} onDelete={onDelete} />
+              <GamesList
+                onEdit={onEdit}
+                onDelete={onDelete}
+                games={games}
+                onDetails={onDetails}
+              />
             </div>
           </div>
         </main>

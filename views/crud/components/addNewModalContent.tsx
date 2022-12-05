@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
+import { formatToDBDate } from "../utils/dateFns";
 import { IGameModel } from "../utils/types";
 import ModalHeader from "./modalHeader";
 
 type AddNewModalContentProps = {
   onClose: Function;
   selectedGame: IGameModel | null;
+  onAdd: Function;
+  onUpdate: Function;
 };
 
 export default function AddNewModalContent({
   onClose,
   selectedGame = null,
+  onAdd,
+  onUpdate,
 }: AddNewModalContentProps) {
   const [formData, setFormData] = useState<IGameModel>({
-    id: 0,
+    id: Math.floor(Math.random() * 90000) + 10000, // generate a random 5 digit id
     name: "",
     author: "",
     url: "",
-    published_date: "",
+    published_date: formatToDBDate(new Date()),
   });
 
   // Initialize the form fields in case of edit
@@ -26,13 +31,20 @@ export default function AddNewModalContent({
     }
   }, [selectedGame]);
 
+  function submit() {
+    if (selectedGame) {
+      onUpdate(formData);
+    } else {
+      onAdd(formData);
+    }
+  }
   return (
     <>
       <ModalHeader
         title={selectedGame ? "Edit Game" : "Add New Game"}
         onClose={onClose}
       />
-      <form>
+      <form onSubmit={submit}>
         <div className="mb-6">
           <label
             htmlFor="name"
@@ -46,6 +58,7 @@ export default function AddNewModalContent({
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Name of your game"
             value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
           />
         </div>
@@ -62,6 +75,7 @@ export default function AddNewModalContent({
             placeholder="url of your game"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={formData.url}
+            onChange={(e) => setFormData({ ...formData, url: e.target.value })}
             required
           />
         </div>
@@ -79,6 +93,9 @@ export default function AddNewModalContent({
             placeholder="Simple Viral Games"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             value={formData.author}
+            onChange={(e) =>
+              setFormData({ ...formData, author: e.target.value })
+            }
             required
           />
         </div>
