@@ -9,6 +9,8 @@
     "@types/chart.js": "^2.9.37",
     "chart.js": "^4.0.1",
     "clsx": "^1.2.1",
+    "dexie": "^3.2.2",
+    "dexie-react-hooks": "^1.1.1",
     "next": "latest",
     "react": "18.2.0",
     "react-chartjs-2": "^5.0.1",

@@ -1,20 +1,92 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import AddNewModalContent from "./components/addNewModalContent";
+import DeleteWarningModalContent from "./components/deleteWarningModalContent";
 import FilterButton from "./components/filterButton";
 import GameCard from "./components/gameCard";
 
 import Header from "./components/header";
 import Modal from "./components/modal";
 import WelcomeBanner from "./components/welcomeBanner";
+import gamesReducer, { INITIAL_STATE } from "./utils/gamesReducer";
+import { IGameModel } from "./utils/types";
 
 function Dashboard() {
   const [addNewModalOpen, setAddNewModalOpen] = useState(false);
+  const [deleteWarningModalOpen, setDeleteWarningModalOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState<IGameModel | null>(null);
+
+  //const [state, dispatch] = useReducer(gamesReducer, INITIAL_STATE);
+
+  // called when the edit button is clicked on an individual card
+  function onEdit(game: IGameModel) {
+    setSelectedGame(game);
+    setAddNewModalOpen(true);
+  }
+
+  // called when the delete button is clicked on an individual card
+  function onDelete(game: IGameModel) {
+    setDeleteWarningModalOpen(true);
+    setSelectedGame(game);
+  }
+
+  // function to initiate delete action
+  function deleteGame(game: IGameModel) {}
+
+  // clears the selected game when the modals are closed
+  useEffect(() => {
+    if (!addNewModalOpen && !deleteWarningModalOpen) {
+      setSelectedGame(null);
+    }
+  }, [addNewModalOpen, deleteWarningModalOpen]);
+
+  const games: Array<IGameModel> = [
+    {
+      id: 1,
+      name: "Some Game Name",
+      author: "John Doe",
+      url: "https://www.acmeplus.com",
+      published_date: "2021-01-01",
+    },
+    {
+      id: 2,
+      name: "Some Game Name",
+      author: "John Doe",
+      url: "https://www.acmeplus.com",
+      published_date: "2021-01-01",
+    },
+    {
+      id: 3,
+      name: "Some Game Name",
+      author: "John Doe",
+      url: "https://www.acmeplus.com",
+      published_date: "2021-01-01",
+    },
+    {
+      id: 4,
+      name: "Some Game Name",
+      author: "John Doe",
+      url: "https://www.acmeplus.com",
+      published_date: "2021-01-01",
+    },
+  ];
 
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Modals */}
+      <Modal
+        modalOpen={deleteWarningModalOpen}
+        setModalOpen={setDeleteWarningModalOpen}
+      >
+        <DeleteWarningModalContent
+          onClose={() => setDeleteWarningModalOpen(false)}
+          onDelete={deleteGame}
+        />
+      </Modal>
       <Modal modalOpen={addNewModalOpen} setModalOpen={setAddNewModalOpen}>
-        <AddNewModalContent onClose={() => setAddNewModalOpen(false)} />
+        <AddNewModalContent
+          onClose={() => setAddNewModalOpen(false)}
+          selectedGame={selectedGame}
+        />
       </Modal>
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
@@ -58,11 +130,9 @@ function Dashboard() {
 
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-              <GameCard />
-              <GameCard />
-              <GameCard />
-              <GameCard />
-              <GameCard />
+              {games.map((game) => (
+                <GameCard game={game} onEdit={onEdit} onDelete={onDelete} />
+              ))}
             </div>
           </div>
         </main>
