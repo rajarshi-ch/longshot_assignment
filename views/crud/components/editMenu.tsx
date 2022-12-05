@@ -50,10 +50,11 @@ function EditMenu({ children, ...rest }: any) {
           <circle cx="22" cy="16" r="2" />
         </svg>
       </button>
-      <div className="origin-top-right z-10 absolute top-full right-0 w-36	bg-white border border-slate-200 py-1.5 rounded shadow-lg overflow-hidden mt-1">
+      <div>
         <CSSTransition
           in={dropdownOpen}
           timeout={150}
+          className="origin-top-right z-10 absolute top-full right-0 w-36	bg-white border border-slate-200 py-1.5 rounded shadow-lg overflow-hidden mt-1 "
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 -translate-y-2"
           enterTo="opacity-100 translate-y-0"

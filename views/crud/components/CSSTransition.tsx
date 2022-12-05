@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { CSSTransition as ReactTransition } from "react-transition-group";
 
 interface TransitionProps {
+  className?: string;
   in?: boolean;
   timeout: number;
   enter?: string;
@@ -25,7 +26,8 @@ function removeClasses(
 }
 
 export function CSSTransition(props: TransitionProps) {
-  const { enter, enterFrom, enterTo, leave, leaveFrom, leaveTo } = props;
+  const { className, enter, enterFrom, enterTo, leave, leaveFrom, leaveTo } =
+    props;
   const nodeRef = React.useRef<HTMLDivElement>(null);
 
   const enterClasses = splitClasses(enter);
@@ -37,6 +39,7 @@ export function CSSTransition(props: TransitionProps) {
 
   return (
     <ReactTransition
+      className={className}
       in={props.in}
       nodeRef={nodeRef}
       timeout={props.timeout}
