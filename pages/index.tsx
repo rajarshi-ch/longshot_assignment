@@ -57,7 +57,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="/drag_n_drop"
+            href="/crud"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
