@@ -8,16 +8,19 @@ export default function RowCards({ rows, headers }) {
 
   return (
     <>
-      {rows.map((row) => {
-        return <RowCard values={row.values} />;
+      {rows.map((row, index) => {
+        return <RowCard values={row.values} keys={index} />;
       })}
     </>
   );
 }
 
-function RowCard({ values }) {
+function RowCard({ values, keys }) {
   return (
-    <div className="w-full p-6 sm:hidden bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-3 hover:bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90% hover:text-white">
+    <div
+      key={keys}
+      className="w-full p-6 sm:hidden bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-3 hover:bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90% hover:text-white"
+    >
       {Object.keys(values).map((key) => {
         return (
           <tr className="flex justify-between border-b-2">
