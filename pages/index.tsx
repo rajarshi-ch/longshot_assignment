@@ -65,6 +65,18 @@ const Home: NextPage = () => {
               A simple dashboard with CRUD operations .
             </p>
           </a>
+
+          <a
+            href="/react_table"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">Responsive Table &rarr;</h3>
+            <p className="mt-4 text-xl">
+              A responsive table with filtering and sorting .
+            </p>
+          </a>
         </div>
       </main>
 
